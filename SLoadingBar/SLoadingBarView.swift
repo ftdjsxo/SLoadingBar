@@ -13,7 +13,7 @@ class SLoadingBarView : UIView {
     private var barView : UIView?
     private var currentPercentage : Double = 0.0
     
-    var progressBarColor : UIColor?{
+    var progressBarColor : UIColor{
         get{
             if _progressBarColor == nil{
                 self._progressBarColor = SLBVUtils.UIColorFromHex(0x228cd8)
@@ -21,7 +21,7 @@ class SLoadingBarView : UIView {
             return self._progressBarColor!
         }
         set{
-            self._progressBarColor = self.progressBarColor
+            self._progressBarColor = newValue
             self.barView?.backgroundColor = self.progressBarColor
         }
     }
@@ -32,6 +32,10 @@ class SLoadingBarView : UIView {
                 self._errorColor = SLBVUtils.UIColorFromHex(0xd8223a)
             }
             return _errorColor!
+        }
+        
+        set{
+            self._errorColor = newValue
         }
     }
     
